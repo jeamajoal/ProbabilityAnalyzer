@@ -91,6 +91,101 @@ wc -l statistical/$currentfile$u
 echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
+currentfile=3charwords
+egrep '^[a-z]{3}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=4charwords
+egrep '^[a-z]{4}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=5charwords
+egrep '^[a-z]{5}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=6charwords
+egrep '^[a-z]{6}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=7charwords
+egrep '^[a-z]{7}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=8charwords
+egrep '^[a-z]{8}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=9charwords
+egrep '^[a-z]{9}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
+
+currentfile=10charwords
+egrep '^[a-z]{10}$' /rawdata/mixalphastrings > $currentfile
+sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
+head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
+head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
+head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
+echo "Top 10 $currentfile"
+head -n 10 statistical/$currentfile$uc
 
 currentfile=digitstrings
 egrep -oa '[0-9]{3,25}' $mypasswds > rawdata/$currentfile
