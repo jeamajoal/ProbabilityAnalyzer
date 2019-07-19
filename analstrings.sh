@@ -78,32 +78,6 @@ thp="_top_50perc"
 uc="_uniq_count"
 u="_uniq"
 
-currentfile=mixalphastrings
-egrep -oa '[a-Z]{3,8}' $mypasswds > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
-sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "TOTAL UNIQ $currentfile STRINGS"
-wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=digitstrings
-egrep -oa '[0-9]{3,25}' $mypasswds > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
-sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "TOTAL UNIQ $currentfile STRINGS"
-wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
 currentfile=3charfound
 cat $mypasswds |egrep -oa '.{3}' > rawdata/$currentfile
 cat $mypasswds | cut -c 2- | egrep -oa '.{3}' >> rawdata/$currentfile
