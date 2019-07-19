@@ -92,7 +92,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=3charwords
-egrep '^[a-z]{3}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{3}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -104,7 +104,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=4charwords
-egrep '^[a-z]{4}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{4}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -116,7 +116,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=5charwords
-egrep '^[a-z]{5}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{5}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -128,7 +128,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=6charwords
-egrep '^[a-z]{6}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{6}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -140,7 +140,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=7charwords
-egrep '^[a-z]{7}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{7}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -152,7 +152,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=8charwords
-egrep '^[a-z]{8}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{8}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -164,7 +164,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=9charwords
-egrep '^[a-z]{9}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{9}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
@@ -176,7 +176,7 @@ echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=10charwords
-egrep '^[a-z]{10}$' rawdata/mixalphastrings > rawdata/$currentfile
+egrep '^[a-Z]{10}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile | uniq -c | sort -S 100 -h -r > statistical/$currentfile$uc
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u rawdata/$currentfile > statistical/$currentfile$u
