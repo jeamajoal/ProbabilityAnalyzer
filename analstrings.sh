@@ -63,6 +63,12 @@ echo "You dont have permission to read $mypasswds !!"
 exit 1
 fi
 
+rm /TMPS -R
+rm $basedir/$basename -R
+rm $basedir/$basename/statistical -R
+rm $basedir/$basename/rawdata -R
+rm $basedir/$basename/thebabies -R
+
 mkdir /TMPS
 mkdir $basedir/$basename
 mkdir $basedir/$basename/statistical
@@ -349,7 +355,3 @@ echo "TOTAL UNIQ $currentfile STRINGS"
 wc -l statistical/$currentfile$u
 echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
-
-
-
-
