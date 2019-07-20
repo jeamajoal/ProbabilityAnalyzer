@@ -63,11 +63,8 @@ echo "You dont have permission to read $mypasswds !!"
 exit 1
 fi
 
-rm /TMPS -R
-rm $basedir/$basename -R
-rm $basedir/$basename/statistical -R
-rm $basedir/$basename/rawdata -R
-rm $basedir/$basename/thebabies -R
+[ -d  /TMPS ] && rm /TMPS -R
+[ -d $basedir/$basename ] && rm $basedir/$basename -R
 
 mkdir /TMPS
 mkdir $basedir/$basename
