@@ -95,7 +95,6 @@ currentfile=3charwords
 egrep '[a-Z]{3}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
 head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
@@ -106,7 +105,6 @@ head -n 10 statistical/$currentfile$uc
 currentfile=4charwords
 egrep '[a-Z]{4}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
@@ -119,7 +117,6 @@ currentfile=5charwords
 egrep '[a-Z]{5}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
 head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
@@ -130,7 +127,6 @@ head -n 10 statistical/$currentfile$uc
 currentfile=6charwords
 egrep '[a-Z]{6}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
@@ -143,7 +139,6 @@ currentfile=7charwords
 egrep '[a-Z]{7}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
 head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
@@ -154,7 +149,6 @@ head -n 10 statistical/$currentfile$uc
 currentfile=8charwords
 egrep '[a-Z]{8}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
@@ -167,7 +161,6 @@ currentfile=9charwords
 egrep '[a-Z]{9}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
 head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
@@ -178,7 +171,6 @@ head -n 10 statistical/$currentfile$uc
 currentfile=10charwords
 egrep '[a-Z]{10}' rawdata/mixalphastrings > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
 head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
