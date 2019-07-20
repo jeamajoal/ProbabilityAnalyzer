@@ -82,7 +82,7 @@ uc="_uniq_count"
 u="_uniq"
 
 currentfile=mixalphastrings
-egrep -oa '[a-Z]{3,8}' $mypasswds > rawdata/$currentfile
+egrep -oa '[a-zA-Z]{3,25}' $mypasswds > rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
@@ -91,113 +91,11 @@ head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfil
 head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
 echo "TOTAL UNIQ $currentfile STRINGS"
 wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=3charwords
-egrep '[a-Z]{3}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=4charwords
-egrep '[a-Z]{4}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=5charwords
-egrep '[a-Z]{5}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=6charwords
-egrep '[a-Z]{6}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=7charwords
-egrep '[a-Z]{7}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=8charwords
-egrep '[a-Z]{8}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=9charwords
-egrep '[a-Z]{9}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=10charwords
-egrep '[a-Z]{10}' rawdata/mixalphastrings > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
 echo "Top 10 $currentfile"
 head -n 10 statistical/$currentfile$uc
 
 currentfile=digitstrings
 egrep -oa '[0-9]{3,8}' $mypasswds > rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "TOTAL UNIQ $currentfile STRINGS"
-wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=2charfound
-cat $mypasswds |egrep -oa '.{2}' > rawdata/$currentfile
-cat $mypasswds | cut -c 2- | egrep -oa '.{2}' >> rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
@@ -264,84 +162,6 @@ cat $mypasswds | cut -c 3- | egrep -oa '.{6}' >> rawdata/$currentfile
 cat $mypasswds | cut -c 4- | egrep -oa '.{6}' >> rawdata/$currentfile
 cat $mypasswds | cut -c 5- | egrep -oa '.{6}' >> rawdata/$currentfile
 cat $mypasswds | cut -c 6- | egrep -oa '.{6}' >> rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "TOTAL UNIQ $currentfile STRINGS"
-wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=7charfound
-cat $mypasswds |egrep -oa '.{7}' > rawdata/$currentfile
-cat $mypasswds | cut -c 2- | egrep -oa '.{7}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 3- | egrep -oa '.{7}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 4- | egrep -oa '.{7}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 5- | egrep -oa '.{7}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 6- | egrep -oa '.{7}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 7- | egrep -oa '.{7}' >> rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "TOTAL UNIQ $currentfile STRINGS"
-wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=8charfound
-cat $mypasswds |egrep -oa '.{8}' > rawdata/$currentfile
-cat $mypasswds | cut -c 2- | egrep -oa '.{8}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 3- | egrep -oa '.{8}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 4- | egrep -oa '.{8}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 5- | egrep -oa '.{8}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 6- | egrep -oa '.{8}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 7- | egrep -oa '.{8}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 8- | egrep -oa '.{8}' >> rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-
-currentfile=9charfound
-cat $mypasswds |egrep -oa '.{9}' > rawdata/$currentfile
-cat $mypasswds | cut -c 2- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 3- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 4- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 5- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 6- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 7- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 8- | egrep -oa '.{9}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 9- | egrep -oa '.{9}' >> rawdata/$currentfile
-sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
-sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
-head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 5 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$fip
-head -n $(( $(wc -l < statistical/$currentfile$u) / 3 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tfp
-head -n $(( $(wc -l < statistical/$currentfile$u) / 2 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$thp
-echo "TOTAL UNIQ $currentfile STRINGS"
-wc -l statistical/$currentfile$u
-echo "Top 10 $currentfile"
-head -n 10 statistical/$currentfile$uc
-
-currentfile=10charfound
-cat $mypasswds |egrep -oa '.{10}' > rawdata/$currentfile
-cat $mypasswds | cut -c 2- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 3- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 4- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 5- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 6- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 7- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 8- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 9- | egrep -oa '.{10}' >> rawdata/$currentfile
-cat $mypasswds | cut -c 10- | egrep -oa '.{10}' >> rawdata/$currentfile
 sort -S 100 rawdata/$currentfile --parallel=8 -T /TMPS| uniq -c | sort -S 100 -h -r --parallel=8 -T /TMPS> statistical/$currentfile$uc
 sort -S 100 -u --parallel=8 -T /TMPS rawdata/$currentfile > statistical/$currentfile$u
 head -n $(( $(wc -l < statistical/$currentfile$u) / 10 )) statistical/$currentfile$uc | cut -c 9- > thebabies/$currentfile$tp
