@@ -1,7 +1,7 @@
-# analstrings<br>
+# ProbabilityAnalyzer<br>
 My password string analysis work geared to making focused wordlists for seperate projects.<br>
 <br>
-USAGE:  analstrings.sh -b /root/wordlists/analysis -n MyNewAnalysis -f MyPasses<br>
+USAGE:  probanalyzer.sh -b /root/wordlists/analysis -n MyNewAnalysis -f MyPasses<br>
 -b Base Directory    Used to specify the new projects working directory<br>
 -n Base Name         Used to specify the name of the project folder<br>
 -f File to analyze   Used to specify the password file to analyze<br>
